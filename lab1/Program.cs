@@ -10,7 +10,7 @@ internal class Program
     {
         Console.WriteLine("Часть 1:");
 
-        int length = IOUtils.ReadInt("Введите размер массива: ");
+        int length = IOUtils.ReadPositiveInt("Введите размер массива: ");
 
         var arrayManipulator = new ArrayManipulator(length);
         arrayManipulator.ProcessData();
