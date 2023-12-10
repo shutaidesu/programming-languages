@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace Lab3;
 
 public class JsonDataSerializer : IDataSerializer
@@ -9,6 +11,6 @@ public class JsonDataSerializer : IDataSerializer
 
     public string Serialize(Data data)
     {
-        throw new NotImplementedException();
+        return JsonSerializer.Serialize(data);
     }
 }

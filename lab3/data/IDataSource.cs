@@ -2,7 +2,7 @@ namespace Lab3;
 
 public interface IDataSource
 {
-    public void Save();
+    public void Save(Data data);
 
-    public void Load();
+    public Data Load();
 }
