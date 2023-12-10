@@ -20,6 +20,8 @@ internal class CommandManager
 
     public void Listen()
     {
+        PrintHelp();
+
         while (Application.IsRunning)
         {
             var request = ReadRequest();
@@ -32,7 +34,7 @@ internal class CommandManager
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("Команда ");
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = Constants.CommandColor;
                 Console.Write("{0}", request);
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(" не найдена.\n");
@@ -42,7 +44,9 @@ internal class CommandManager
 
     public string ReadRequest()
     {
+        Console.ForegroundColor = ConsoleColor.Gray;
         Console.Write(">>> ");
+        Console.ForegroundColor = ConsoleColor.White;
         return Console.ReadLine().Trim();
     }
 
@@ -57,5 +61,15 @@ internal class CommandManager
         }
 
         throw new NotExistCommandException();
+    }
+
+    public void PrintHelp()
+    {
+        Console.Write("+--- Help -------------------------------+ \n\n");
+        foreach (var command in commands)
+        {
+            command.PrintHelp();
+        }
+        Console.Write("\n+----------------------------------------+ \n\n");
     }
 }
