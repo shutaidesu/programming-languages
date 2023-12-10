@@ -9,12 +9,12 @@ internal class DataSqliteSource : IDataSource
         this.filename = filename;
     }
 
-    public void Load()
+    public void Save(Data data)
     {
         throw new NotImplementedException();
     }
 
-    public void Save()
+    public Data Load()
     {
         throw new NotImplementedException();
     }

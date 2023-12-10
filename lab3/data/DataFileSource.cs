@@ -12,12 +12,12 @@ internal class DataFileSource : IDataSource
         this.serializer = serializer;
     }
 
-    public void Load()
+    public Data Load()
     {
         throw new NotImplementedException();
     }
 
-    public void Save()
+    public void Save(Data data)
     {
         throw new NotImplementedException();
     }
