@@ -10,11 +10,18 @@ internal class Program
     {
         Console.WriteLine("Часть 1:");
 
-        int length = IOUtils.ReadPositiveInt("Введите размер массива: ");
+        try
+        {
+            int length = IOUtils.ReadPositiveInt("Введите размер массива: ");
 
-        var arrayManipulator = new ArrayManipulator(length);
-        arrayManipulator.ProcessData();
-        arrayManipulator.PrintResult();
+            var arrayManipulator = new ArrayManipulator(length);
+            arrayManipulator.ProcessData();
+            arrayManipulator.PrintResult();
+        }
+        catch (InterruptionException)
+        {
+            Console.WriteLine("Выполнение Части 1 прервано.");
+        }
 
 
         Console.WriteLine("Часть 2:");
