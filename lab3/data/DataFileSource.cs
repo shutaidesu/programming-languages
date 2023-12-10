@@ -14,11 +14,13 @@ internal class DataFileSource : IDataSource
 
     public Data Load()
     {
-        throw new NotImplementedException();
+        var content = File.ReadAllText(filename);
+        return serializer.Deserialize(content);
     }
 
     public void Save(Data data)
     {
-        throw new NotImplementedException();
+        var content = serializer.Serialize(data);
+        File.WriteAllText(filename, content);
     }
 }
