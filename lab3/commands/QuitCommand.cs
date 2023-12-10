@@ -1,6 +1,3 @@
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System;
-
 namespace Lab3;
 
 public class QuitCommand : Command
