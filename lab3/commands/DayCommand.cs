@@ -6,7 +6,7 @@ public class DayCommand : Command
     {
     }
 
-    public override void Execute()
+    public override HistoryEntity Execute()
     {
         var date = IOUtils.ReadDate();
         var dayOfWeek = date.DayOfWeek;
@@ -15,5 +15,7 @@ public class DayCommand : Command
         Console.Write("{0}", dayOfWeek.ToString());
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write(".\n");
+
+        return new HistoryEntity(this, string.Format("{0} is {1}.", date.ToString("dd.MM.yyyy"), dayOfWeek.ToString()));
     }
 }

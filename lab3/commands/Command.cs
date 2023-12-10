@@ -21,7 +21,7 @@ public abstract class Command
         this.orderNumber = ++lastOrderNumber;
     }
 
-    abstract public void Execute();
+    abstract public HistoryEntity Execute();
 
     public void PrintHelp()
     {

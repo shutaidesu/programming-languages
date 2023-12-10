@@ -28,7 +28,8 @@ internal class CommandManager
             try
             {
                 var command = HandleCommand(request);
-                command.Execute();
+                var historyEntity = command.Execute();
+                Application.DataManagement.AddHistoryEntity(historyEntity);
             }
             catch (NotExistCommandException)
             {
