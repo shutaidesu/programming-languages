@@ -1,14 +1,12 @@
 namespace Lab3;
 
-public abstract class Command
+public abstract class Command<T>
 {
     private static int lastOrderNumber = 0;
 
     private readonly string name;
 
     private readonly string description;
-
-    private readonly int orderNumber;
 
     public string Name => name;
 
@@ -18,21 +16,20 @@ public abstract class Command
     {
         this.name = name;
         this.description = description;
-        this.orderNumber = ++lastOrderNumber;
     }
 
-    abstract public HistoryEntity Execute();
+    abstract public T Execute();
 
-    public void PrintHelp()
+    public void PrintHelp(int index)
     {
         Console.ForegroundColor = ConsoleColor.Gray;
         Console.Write("[");
         Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.Write("{1}", name, orderNumber);
+        Console.Write("{0}", index);
         Console.ForegroundColor = ConsoleColor.Gray;
         Console.Write("] ");
         Console.ForegroundColor = Constants.CommandColor;
-        Console.Write("{0,-8}", name, orderNumber);
+        Console.Write("{0,-8}", name);
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write(" {0}.\n", description);
     }
@@ -40,7 +37,6 @@ public abstract class Command
     public bool IsMatch(string request)
     {
         if (request == name) return true;
-        if (request == orderNumber.ToString()) return true;
 
         return false;
     }

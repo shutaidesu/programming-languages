@@ -2,7 +2,7 @@
 
 public static class Application
 {
-    private static readonly CommandManager commandManager;
+    private static readonly ApplicationCommandManager commandManager;
 
     private static readonly IDataManagement dataManagement;
 
@@ -11,7 +11,7 @@ public static class Application
     static Application()
     {
         dataManagement = new DataManagement();
-        commandManager = new CommandManager();
+        commandManager = new ApplicationCommandManager();
         commandManager.RegisterCommand(new CheckCommand());
         commandManager.RegisterCommand(new CalcCommand());
         commandManager.RegisterCommand(new DayCommand());

@@ -1,6 +1,6 @@
 namespace Lab3;
 
-public class DayCommand : Command
+public class DayCommand : Command<HistoryEntity>
 {
     public DayCommand() : base("day", "get the name of weekday")
     {

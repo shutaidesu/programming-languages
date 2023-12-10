@@ -1,6 +1,6 @@
 namespace Lab3;
 
-public class CalcCommand : Command
+public class CalcCommand : Command<HistoryEntity>
 {
     public CalcCommand() : base("calc", "calc interval length")
     {

@@ -11,17 +11,17 @@ internal class DataManagement : IDataManagement
 
     public void AddHistoryEntity(HistoryEntity historyEntity)
     {
-        data.history.Add(historyEntity);
+        data.History.Add(historyEntity);
     }
 
     public List<HistoryEntity> GetHistory()
     {
-        return data.history;
+        return data.History;
     }
 
     public void ClearHistory()
     {
-        data.history.Clear();
+        data.History.Clear();
     }
 
     public void Load(IDataSource dataSource)
