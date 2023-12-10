@@ -28,8 +28,9 @@ public class CheckCommand : Command
                 Console.Write(" leap.\n");
             }
         }
-        catch (InterruptionException) {
-            Console.WriteLine("�������� �������������.");
+        catch (InterruptionException)
+        {
+            Console.WriteLine("Ввод прерван.");
         }
         catch (Exception ex)
         {
