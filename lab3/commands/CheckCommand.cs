@@ -6,7 +6,7 @@ public class CheckCommand : Command
     {
     }
 
-    public override void Execute()
+    public override HistoryEntity Execute()
     {
         try
         {
@@ -18,6 +18,8 @@ public class CheckCommand : Command
                 Console.Write("is");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(" leap.\n");
+
+                return new HistoryEntity(this, string.Format("{0} is leap.", year));
             }
             else
             {
@@ -26,15 +28,20 @@ public class CheckCommand : Command
                 Console.Write("is not");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(" leap.\n");
+
+                return new HistoryEntity(this, string.Format("{0} is not leap.", year));
             }
+
         }
         catch (InterruptionException)
         {
             Console.WriteLine("Ввод прерван.");
+            return new HistoryEntity(this, "Ввод прерван.");
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+            return new HistoryEntity(this, ex.Message);
         }
     }
 }

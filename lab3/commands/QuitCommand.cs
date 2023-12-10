@@ -1,3 +1,6 @@
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System;
+
 namespace Lab3;
 
 public class QuitCommand : Command
@@ -6,11 +9,13 @@ public class QuitCommand : Command
     {
     }
 
-    public override void Execute()
+    public override HistoryEntity Execute()
     {
         Console.ForegroundColor = ConsoleColor.Gray;
         Console.WriteLine("Stopping...");
         Console.ForegroundColor = ConsoleColor.White;
         Application.Stop();
+
+        return new HistoryEntity(this, "Stop.");
     }
 }

@@ -6,7 +6,7 @@ public class CalcCommand : Command
     {
     }
 
-    public override void Execute()
+    public override HistoryEntity Execute()
     {
         // Reading FROM
         Console.Write("Input ");
@@ -35,5 +35,7 @@ public class CalcCommand : Command
         Console.Write("{0}", differenceDays);
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write(" days.\n");
+
+        return new HistoryEntity(this, string.Format("Interval is {0} days.", differenceDays));
     }
 }
