@@ -2,9 +2,11 @@ namespace Lab3;
 
 public interface IDataManagement
 {
-    public void Load(IDataManagement dataSource);
+    public void Load(IDataSource dataSource);
 
-    public void Save(IDataManagement dataSource);
+    public void Save(IDataSource dataSource);
+
+    public void ClearHistory();
 
     public void AddHistoryEntity(HistoryEntity historyEntity);
 

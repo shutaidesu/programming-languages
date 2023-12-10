@@ -2,33 +2,35 @@
 
 internal class DataManagement : IDataManagement
 {
+    private Data data;
+
+    public DataManagement()
+    {
+        data = new Data();
+    }
+
     public void AddHistoryEntity(HistoryEntity historyEntity)
     {
-        throw new NotImplementedException();
+        data.history.Add(historyEntity);
     }
 
     public List<HistoryEntity> GetHistory()
     {
-        throw new NotImplementedException();
+        return data.history;
     }
 
-    public Data Load()
+    public void ClearHistory()
     {
-        throw new NotImplementedException();
+        data.history.Clear();
     }
 
-    public void Load(IDataManagement dataSource)
+    public void Load(IDataSource dataSource)
     {
-        throw new NotImplementedException();
+        data = dataSource.Load();
     }
 
-    public void Save(Data data)
+    public void Save(IDataSource dataSource)
     {
-        throw new NotImplementedException();
-    }
-
-    public void Save(IDataManagement dataSource)
-    {
-        throw new NotImplementedException();
+        dataSource.Save(data);
     }
 }
