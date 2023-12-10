@@ -25,10 +25,16 @@ public abstract class Command
 
     public void PrintHelp()
     {
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write("%s.", name);
-        Console.ResetColor();
-        Console.Write(" %s.", description);
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.Write("[");
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        Console.Write("{1}", name, orderNumber);
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.Write("] ");
+        Console.ForegroundColor = Constants.CommandColor;
+        Console.Write("{0,-8}", name, orderNumber);
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write(" {0}.\n", description);
     }
 
     public bool IsMatch(string request)
