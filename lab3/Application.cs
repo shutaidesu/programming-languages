@@ -16,6 +16,9 @@ public static class Application
         commandManager.RegisterCommand(new CalcCommand());
         commandManager.RegisterCommand(new DayCommand());
         commandManager.RegisterCommand(new QuitCommand());
+        commandManager.RegisterCommand(new LoadCommand());
+        commandManager.RegisterCommand(new SaveCommand());
+        commandManager.RegisterCommand(new HistoryCommand());
     }
 
     public static bool IsRunning { get => isRunning; }
