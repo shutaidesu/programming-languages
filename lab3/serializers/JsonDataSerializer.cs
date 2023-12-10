@@ -1,4 +1,5 @@
 using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Lab3;
 
@@ -6,7 +7,7 @@ public class JsonDataSerializer : IDataSerializer
 {
     public Data Deserialize(string content)
     {
-        throw new NotImplementedException();
+        return JsonSerializer.Deserialize<Data>(content);
     }
 
     public string Serialize(Data data)
