@@ -8,6 +8,9 @@ public class QuitCommand : Command
 
     public override void Execute()
     {
-        throw new NotImplementedException();
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.WriteLine("Stopping...");
+        Console.ForegroundColor = ConsoleColor.White;
+        Application.Stop();
     }
 }
