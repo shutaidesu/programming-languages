@@ -2,16 +2,29 @@ namespace Lab3;
 
 public class HistoryEntity
 {
-    public readonly DateTime dateTime;
+    private DateTime dateTime;
 
-    public readonly Command command;
+    private string command;
 
-    public readonly string message;
+    private string message;
 
-    public HistoryEntity(Command command, string message)
+    public DateTime DateTime { get => dateTime; set => dateTime = value; }
+    
+    public string Command { get => command; set => command = value; }
+    
+    public string Message { get => message; set => message = value; }
+
+    public HistoryEntity(Command<HistoryEntity> command, string message)
     {
-        this.command = command;
-        this.message = message;
-        dateTime = DateTime.Now;
+        this.Command = command.Name;
+        this.Message = message;
+        DateTime = DateTime.Now;
+    }
+
+    public HistoryEntity()
+    {
+        Command = null;
+        Message = null;
+        DateTime = DateTime.Now;
     }
 }

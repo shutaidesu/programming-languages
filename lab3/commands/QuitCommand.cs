@@ -1,6 +1,6 @@
 namespace Lab3;
 
-public class QuitCommand : Command
+public class QuitCommand : Command<HistoryEntity>
 {
     public QuitCommand() : base("quit", "exit the program")
     {

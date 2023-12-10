@@ -2,5 +2,7 @@
 
 public class Data
 {
-    public List<HistoryEntity> history;
+    private List<HistoryEntity> history = new List<HistoryEntity>();
+
+    public List<HistoryEntity> History { get => history; set => history = value; }
 }

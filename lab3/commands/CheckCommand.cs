@@ -1,6 +1,6 @@
 namespace Lab3;
 
-public class CheckCommand : Command
+public class CheckCommand : Command<HistoryEntity>
 {
     public CheckCommand() : base("check", "check if a year is leap")
     {
