@@ -7,6 +7,11 @@ public class MatrixManipulator : IManipulator
         throw new NotImplementedException();
     }
 
+    public void FillWithRandomValues()
+    {
+        throw new NotImplementedException();
+    }
+
     public void PrintResult()
     {
         throw new NotImplementedException();
