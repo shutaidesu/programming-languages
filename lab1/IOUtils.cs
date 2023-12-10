@@ -66,7 +66,7 @@ public static class IOUtils
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                Console.Write(" ", matrix[i, j]);
+                Console.Write("{0,4} ", matrix[i, j]);
             }
             Console.WriteLine();
         }

@@ -4,6 +4,6 @@
 
 public static class Constants
 {
-    public static int MinRandomValue = 0;
-    public static int MaxRandomValue = 3;
+    public static int MinRandomValue = -2;
+    public static int MaxRandomValue = 2;
 }
