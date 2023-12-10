@@ -8,6 +8,12 @@ public class DayCommand : Command
 
     public override void Execute()
     {
-        throw new NotImplementedException();
+        var date = IOUtils.ReadDate();
+        var dayOfWeek = date.DayOfWeek;
+        Console.Write("{0} is ", date.ToString("dd.MM.yyyy"));
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("{0}", dayOfWeek.ToString());
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write(".\n");
     }
 }
