@@ -8,26 +8,34 @@ internal class Program
 
     static void Main(string[] args)
     {
-        Console.WriteLine("Часть 1:");
-
         try
         {
-            int length = IOUtils.ReadPositiveInt("Введите размер массива: ");
 
-            var arrayManipulator = new ArrayManipulator(length);
-            arrayManipulator.ProcessData();
-            arrayManipulator.PrintResult();
+            Console.WriteLine("Часть 1:");
+
+            try
+            {
+                int length = IOUtils.ReadPositiveInt("Введите размер массива: ");
+
+                var arrayManipulator = new ArrayManipulator(length);
+                arrayManipulator.ProcessData();
+                arrayManipulator.PrintResult();
+            }
+            catch (InterruptionException)
+            {
+                Console.WriteLine("Выполнение Части 1 прервано.");
+            }
+
+
+            Console.WriteLine("Часть 2:");
+
+            var matrixManipulator = new MatrixManipulator(MatrixRows, MatrixColumns);
+            matrixManipulator.ProcessData();
+            matrixManipulator.PrintResult();
         }
-        catch (InterruptionException)
+        catch (Exception ex)
         {
-            Console.WriteLine("Выполнение Части 1 прервано.");
+            Console.WriteLine(ex.Message);
         }
-
-
-        Console.WriteLine("Часть 2:");
-
-        var matrixManipulator = new MatrixManipulator(MatrixRows, MatrixColumns);
-        matrixManipulator.ProcessData();
-        matrixManipulator.PrintResult();
     }
 }

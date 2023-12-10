@@ -54,4 +54,9 @@ public static class IOUtils
             }
         }
     }
+
+    internal static void PrintIntArray(int[] array)
+    {
+        Console.WriteLine(string.Join(" ", array));
+    }
 }
