@@ -29,7 +29,7 @@ public class CheckCommand : Command
             }
         }
         catch (InterruptionException) {
-            Console.WriteLine("Прервано пользователем.");
+            Console.WriteLine("РџСЂРµСЂРІР°РЅРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј.");
         }
         catch (Exception ex)
         {
