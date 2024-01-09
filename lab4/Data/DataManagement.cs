@@ -1,12 +1,12 @@
-﻿namespace Lab4;
+﻿namespace lab4.Data;
 
 internal class DataManagement : IDataManagement
 {
-    private Data data;
+    private HistoryData data;
 
     public DataManagement()
     {
-        data = new Data();
+        data = new HistoryData();
     }
 
     public void AddHistoryEntity(HistoryEntity historyEntity)

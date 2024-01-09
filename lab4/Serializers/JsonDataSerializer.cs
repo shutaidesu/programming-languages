@@ -1,16 +1,17 @@
+using lab4.Data;
 using System.Text.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Lab4;
+namespace lab4.Serializers;
 
 public class JsonDataSerializer : IDataSerializer
 {
-    public Data Deserialize(string content)
+    public HistoryData Deserialize(string content)
     {
-        return JsonSerializer.Deserialize<Data>(content);
+        return JsonSerializer.Deserialize<HistoryData>(content);
     }
 
-    public string Serialize(Data data)
+    public string Serialize(HistoryData data)
     {
         return JsonSerializer.Serialize(data);
     }

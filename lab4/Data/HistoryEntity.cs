@@ -1,44 +1,40 @@
-namespace Lab4;
+using System.ComponentModel.DataAnnotations;
+
+namespace lab4.Data;
 
 public class HistoryEntity
 {
+    private Guid _id;
+    [Key]
+    public Guid Id
+    {
+        get { return _id; }
+        private set { _id = value; }
+    }
+
     private DateTime dateTime;
 
-    private string command;
+    private Command? command;
 
-    private string message;
+    private string? message;
 
     public DateTime DateTime { get => dateTime; set => dateTime = value; }
 
-    public string Command { get => command; set => command = value; }
+    public Command? Command { get => command; set => command = value; }
 
-    public string Message
+    public string? Message
     {
         get => message; set => message = value;
     }
 
-    public HistoryEntity(Command<HistoryEntity> command, string message, DateTime dateTime)
-    {
-        Command = command.Name;
-        Message = message;
-        DateTime = dateTime;
-    }
-
-    public HistoryEntity(string command, string message, DateTime dateTime)
+    public HistoryEntity(Command command, string message, DateTime dateTime)
     {
         Command = command;
         Message = message;
         DateTime = dateTime;
     }
 
-    public HistoryEntity(Command<HistoryEntity> command, string message)
-    {
-        Command = command.Name;
-        Message = message;
-        DateTime = DateTime.Now;
-    }
-
-    public HistoryEntity(string command, string message)
+    public HistoryEntity(Command command, string message)
     {
         Command = command;
         Message = message;

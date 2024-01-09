@@ -1,8 +1,8 @@
-namespace Lab4;
+namespace lab4.Data;
 
 public interface IDataSource
 {
-    public void Save(Data data);
+    public void Save(HistoryData data);
 
-    public Data Load();
+    public HistoryData Load();
 }

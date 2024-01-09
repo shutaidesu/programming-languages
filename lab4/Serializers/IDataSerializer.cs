@@ -1,8 +1,10 @@
-﻿namespace Lab4;
+﻿using lab4.Data;
+
+namespace lab4.Serializers;
 
 public interface IDataSerializer
 {
-    public string Serialize(Data data);
+    public string Serialize(HistoryData data);
 
-    public Data Deserialize(string content);
+    public HistoryData Deserialize(string content);
 }

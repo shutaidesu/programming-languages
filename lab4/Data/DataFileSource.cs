@@ -1,4 +1,6 @@
-﻿namespace Lab4;
+﻿using lab4.Serializers;
+
+namespace lab4.Data;
 
 internal class DataFileSource : IDataSource
 {
@@ -12,13 +14,13 @@ internal class DataFileSource : IDataSource
         this.serializer = serializer;
     }
 
-    public Data Load()
+    public HistoryData Load()
     {
         var content = File.ReadAllText(filename);
         return serializer.Deserialize(content);
     }
 
-    public void Save(Data data)
+    public void Save(HistoryData data)
     {
         var content = serializer.Serialize(data);
         File.WriteAllText(filename, content);

@@ -1,6 +1,6 @@
-﻿namespace Lab4;
+﻿namespace lab4.Data;
 
-public class Data
+public class HistoryData
 {
     private List<HistoryEntity> history = new List<HistoryEntity>();
 
