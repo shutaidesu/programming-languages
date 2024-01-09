@@ -24,6 +24,7 @@ public class DayController : ControllerBase
         var dayOfWeek = date.DayOfWeek;
         string message = string.Format("{0} is {1}.", date.ToString("dd.MM.yyyy"), dayOfWeek.ToString());
         _context.HistoryEntities.Add(new HistoryEntity(Command.Day, message));
+        _context.SaveChanges();
         return dayOfWeek.ToString();
     }
 }

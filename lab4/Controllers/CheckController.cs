@@ -24,6 +24,7 @@ public class CheckController : ControllerBase
         var isLeap = year % 4 == 0;
         string message = isLeap ? string.Format("{0} is leap.", year) : string.Format("{0} is not leap.", year);
         _context.HistoryEntities.Add(new HistoryEntity(Command.Check, message));
+        _context.SaveChanges();
         return isLeap;
     }
 }

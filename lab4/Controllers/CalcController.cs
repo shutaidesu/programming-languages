@@ -22,6 +22,7 @@ public class CalcController : ControllerBase
         var differenceDays = (dateTo - dateFrom).TotalDays;
         string message = string.Format("Interval is {0} days.", differenceDays);
         _context.HistoryEntities.Add(new HistoryEntity(Command.Calc, message));
+        _context.SaveChanges();
         return differenceDays;
     }
 }
