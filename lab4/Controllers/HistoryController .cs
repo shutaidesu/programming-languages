@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace lab4.Controllers;
 
 /// <summary>
-/// Return weekhistory of the specific date.
+/// Get history of executed commands.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]

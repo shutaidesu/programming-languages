@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace lab4.Controllers;
 
-
+/// <summary>
+/// Calculate interval between two dates.
+/// </summary>
 [ApiController]
 [Route("api/[controller]")]
 public class CalcController : ControllerBase
