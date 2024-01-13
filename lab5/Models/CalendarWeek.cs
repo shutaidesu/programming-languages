@@ -10,7 +10,7 @@ namespace lab5.Models;
 public class CalendarWeek
 {
     public string Week { get; }
-    public ObservableCollection<CalendarDay>? Days { get; }
+    public ObservableCollection<CalendarDay> Days { get; }
 
     public CalendarWeek(int number, ObservableCollection<CalendarDay> days)
     {

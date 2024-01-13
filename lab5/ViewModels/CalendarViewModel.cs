@@ -1,4 +1,5 @@
 ﻿using lab5.Models;
+using lab5.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,10 +11,13 @@ namespace lab5.ViewModels;
 
 public class CalendarViewModel : ViewModelBase
 {
-    public ObservableCollection<CalendarYear> Years { get; }
-
-    public CalendarViewModel(IEnumerable<CalendarYear> items)
+    public ObservableCollection<CalendarYear> Years
     {
-        Years = new ObservableCollection<CalendarYear>(items);
+        get
+        {
+            return YearListService.Years;
+        }
     }
+
+    public CalendarViewModel() { }
 }

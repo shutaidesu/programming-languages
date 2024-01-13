@@ -1,11 +1,19 @@
-﻿namespace lab5.Models;
+﻿using System;
+
+namespace lab5.Models;
 
 public class CalendarDay
 {
-    public int Day { get; }
+     public DateTime DateTime { get; }
 
-    public CalendarDay(int day)
+    public CalendarDay(DateTime dateTime)
     {
-        Day = day;
+        DateTime = dateTime;
     }
+
+    public override string ToString()
+    {
+        return DateTime.Day + " " + DateTime.DayOfWeek;
+    }
+
 }
