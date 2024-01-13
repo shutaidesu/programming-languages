@@ -1,9 +1,14 @@
-﻿namespace lab5.ViewModels
+﻿using lab5.Services;
+
+namespace lab5.ViewModels;
+
+public class MainWindowViewModel : ViewModelBase
 {
-    public class MainWindowViewModel : ViewModelBase
+
+    public MainWindowViewModel()
     {
-#pragma warning disable CA1822 // Mark members as static
-        public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+        var yearListService = new YearListService();
+        YearList = new CalendarViewModel(yearListService.GetItems());
     }
+    public CalendarViewModel YearList { get; }
 }

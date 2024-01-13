@@ -1,8 +1,7 @@
 ﻿using ReactiveUI;
 
-namespace lab5.ViewModels
+namespace lab5.ViewModels;
+
+public class ViewModelBase : ReactiveObject
 {
-    public class ViewModelBase : ReactiveObject
-    {
-    }
 }

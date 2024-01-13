@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:lab5.ViewModels"
+             xmlns:models="using:lab5.Models"
+             mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+		     Width="250" Height="450"
+             x:Class="lab5.Views.CalendarView"
+			 x:DataType="vm:CalendarViewModel">
+
+	<TreeView ItemsSource="{Binding Years}">
+		<TreeView.DataTemplates>
+			<TreeDataTemplate DataType="models:CalendarYear" ItemsSource="{Binding Months}">
+				<TextBlock Text="{Binding Year}" />
+			</TreeDataTemplate>
+			<TreeDataTemplate DataType="models:CalendarMonth" ItemsSource="{Binding Weeks}">
+				<TextBlock Text="{Binding Month}" />
+			</TreeDataTemplate>
+			<TreeDataTemplate DataType="models:CalendarWeek" ItemsSource="{Binding Days}">
+				<TextBlock Text="{Binding Week}" />
+			</TreeDataTemplate>
+			<DataTemplate DataType="models:CalendarDay">
+				<TextBlock Text="{Binding Day}" />
+			</DataTemplate>
+		</TreeView.DataTemplates>
+	</TreeView>
+
+
+</UserControl>
