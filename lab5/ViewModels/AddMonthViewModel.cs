@@ -34,13 +34,12 @@ public class AddMonthViewModel : ViewModelBase
             {
                 if (x.Item1 == null) return false;
                 int year = (int)x.Item1;
-                CalendarYear calendarYear = YearListService.FindCalendarYear(year);
+
+                if (year < 1 || year > 9999) return false;
+
+                var calendarYear = YearListService.FindCalendarYear(year);
                 if (calendarYear == null) return true;
-                if (1 <= x.Item1 && x.Item1 <= 9999)
-                {
-                    return !YearListService.HasMonth(calendarYear, (Month)x.Item2);
-                }
-                return false;
+                return !YearListService.HasMonth(calendarYear, (Month)x.Item2);
             });
 
         OkCommand = ReactiveCommand.Create(

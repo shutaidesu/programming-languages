@@ -18,11 +18,15 @@
 
 		<WrapPanel DockPanel.Dock="Top"
 					 Margin="20">
-			<TextBox AcceptsReturn="True"
-					 Text="{Binding SelectedYear}"
-					 Margin="0,0,20,20"
-					 Watermark="Enter your to do item"/>
 			<StackPanel>
+				<Label Content="Year"/>
+				<TextBox AcceptsReturn="True"
+						 Text="{Binding SelectedYear}"
+						 Margin="0,0,20,20"
+						 Watermark="Any year from 1 to 9999"/>
+			</StackPanel>
+			<StackPanel>
+				<Label Content="Month"/>
 				<ComboBox SelectedIndex="{Binding SelectedMonthIndex}" MaxDropDownHeight="100">
 					<ComboBoxItem>January</ComboBoxItem>
 					<ComboBoxItem>February</ComboBoxItem>
