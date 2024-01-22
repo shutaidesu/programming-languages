@@ -3,21 +3,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:lab5.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+        mc:Ignorable="d"
+		d:DesignWidth="250" d:DesignHeight="450"
 		Width="250" Height="450"
-        xmlns:views="clr-namespace:lab5.Views"
+		CanResize="false"
+		xmlns:views="clr-namespace:lab5.Views"
         x:Class="lab5.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="lab5"
-		Content="{Binding ContentViewModel}"
-		CanResize="false">
+		Content="{Binding ContentViewModel}">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
 
 	<views:CalendarView DataContext="{Binding YearList}" />
 </Window>

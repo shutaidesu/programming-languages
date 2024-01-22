@@ -29,6 +29,8 @@
 			<ContextMenu>
 				<MenuItem Header="Add Month"
 				x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.AddMonth}" />
+				<MenuItem Header="Check is Leap"
+				x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.CheckLeapCommand}" />
 			</ContextMenu>
 		</TreeView.ContextMenu>
 	</TreeView>
