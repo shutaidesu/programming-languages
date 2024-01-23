@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:lab5.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
+             x:Class="lab5.Views.AddMonthView"
+             x:DataType="vm:AddMonthViewModel">
+	<DockPanel>
+		<Button DockPanel.Dock="Bottom"
+				HorizontalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
+				Command="{Binding CancelCommand}">Cancel</Button>
+		<Button DockPanel.Dock="Bottom"
+				HorizontalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
+				Command="{Binding OkCommand}">OK</Button>
+
+		<WrapPanel DockPanel.Dock="Top"
+					 Margin="20">
+			<StackPanel>
+				<Label Content="Year"/>
+				<TextBox AcceptsReturn="True"
+						 Text="{Binding SelectedYear}"
+						 Margin="0,0,20,20"
+						 Watermark="Any year from 1 to 9999"/>
+			</StackPanel>
+			<StackPanel>
+				<Label Content="Month"/>
+				<ComboBox SelectedIndex="{Binding SelectedMonthIndex}" MaxDropDownHeight="100">
+					<ComboBoxItem>January</ComboBoxItem>
+					<ComboBoxItem>February</ComboBoxItem>
+					<ComboBoxItem>March</ComboBoxItem>
+					<ComboBoxItem>April</ComboBoxItem>
+					<ComboBoxItem>May</ComboBoxItem>
+					<ComboBoxItem>June</ComboBoxItem>
+					<ComboBoxItem>July</ComboBoxItem>
+					<ComboBoxItem>August</ComboBoxItem>
+					<ComboBoxItem>September</ComboBoxItem>
+					<ComboBoxItem>October</ComboBoxItem>
+					<ComboBoxItem>November</ComboBoxItem>
+					<ComboBoxItem>December</ComboBoxItem>
+				</ComboBox>
+			</StackPanel>
+		</WrapPanel>
+	</DockPanel>
+</UserControl>
