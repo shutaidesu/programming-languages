@@ -2,13 +2,10 @@
 
 namespace lab5.Models;
 
-public class CalendarDay
+public class CalendarDay : CalendarNode
 {
-     public DateTime DateTime { get; }
-
-    public CalendarDay(DateTime dateTime)
+    public CalendarDay(DateTime dateTime) : base(dateTime)
     {
-        DateTime = dateTime;
     }
 
     public override string ToString()

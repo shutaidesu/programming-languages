@@ -47,9 +47,8 @@ public class MainWindowViewModel : ViewModelBase
             {
                 if (newMonth != null)
                 {
-                    var calendarYear = YearListService.FindOrCreateCalendarYear(newMonth.Year);
                     var calendarMonth = YearListService.CreateCalendarMonth(newMonth.Year, newMonth.Month);
-                    YearListService.InsertCalendarMonth(calendarYear, calendarMonth);
+                    var calendarYear = YearListService.FindOrCreateCalendarYear(newMonth.Year, calendarMonth);
                 }
                 ContentViewModel = YearList;
             });

@@ -24,13 +24,14 @@ public enum Month
 }
 
 
-public class CalendarMonth
+public class CalendarMonth : CalendarNode
 {
     public ObservableCollection<CalendarWeek> Weeks { get; }
     public Month Month { get; }
 
-    public CalendarMonth(Month month, ObservableCollection<CalendarWeek> weeks)
+    public CalendarMonth(Month month, ObservableCollection<CalendarWeek> weeks) : base(weeks.First().Days.First().DateTime)
     {
+
         Month = month;
         Weeks = weeks;
     }

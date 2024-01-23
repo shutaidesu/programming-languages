@@ -22,8 +22,6 @@ public partial class CheckLeapWindow : ReactiveWindow<CheckLeapViewModel>
     private async Task DoShowLeapResultDialogAsync(InteractionContext<CheckLeapResult,
                                             int?> interaction)
     {
-        var dialog = new CheckLeapWindow();
-        dialog.DataContext = interaction.Input;
         var isLeap = interaction.Input.IsLeap;
         var year = interaction.Input.Year;
 

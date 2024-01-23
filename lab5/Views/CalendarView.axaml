@@ -9,7 +9,9 @@
              x:Class="lab5.Views.CalendarView"
 			 x:DataType="vm:CalendarViewModel">
 
-	<TreeView ItemsSource="{Binding Years}">
+	<TreeView ItemsSource="{Binding Years}"
+						  SelectedItems="{Binding SelectedNodes}"
+						  SelectionMode="Multiple">
 		<TreeView.DataTemplates>
 			<TreeDataTemplate DataType="models:CalendarYear" ItemsSource="{Binding Months}">
 				<TextBlock Text="{Binding Year}" />
@@ -29,6 +31,8 @@
 			<ContextMenu>
 				<MenuItem Header="Add Month"
 				x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.AddMonth}" />
+				<MenuItem Header="Calculate range"
+				x:CompileBindings="False" Command="{Binding CalculateRange}" />
 				<MenuItem Header="Check is Leap"
 				x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.CheckLeapCommand}" />
 			</ContextMenu>

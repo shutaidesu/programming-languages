@@ -24,23 +24,30 @@ public class YearListService
         return null;
     }
 
-    static public CalendarYear FindOrCreateCalendarYear(int year)
+    static public CalendarYear FindOrCreateCalendarYear(int year, CalendarMonth calendarMonth)
     {
         for (var i = 0; i < Years.Count; i++)
         {
             var calendarYear = Years[i];
             if (calendarYear.Year == year)
             {
+                InsertCalendarMonth(calendarYear, calendarMonth);
                 return calendarYear;
             }
             else if (calendarYear.Year > year)
             {
-                var newCalendarYear = new CalendarYear(year, new ObservableCollection<CalendarMonth>());
+                var newCalendarYear = new CalendarYear(year, new ObservableCollection<CalendarMonth>
+                {
+                    calendarMonth
+                });
                 Years.Insert(i, newCalendarYear);
                 return newCalendarYear;
             }
         }
-        var newLastCalendarYear = new CalendarYear(year, new ObservableCollection<CalendarMonth>());
+        var newLastCalendarYear = new CalendarYear(year, new ObservableCollection<CalendarMonth>
+                {
+                    calendarMonth
+                });
         Years.Add(newLastCalendarYear);
         return newLastCalendarYear;
     }

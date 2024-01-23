@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace lab5.Models;
 
-public class CalendarWeek
+public class CalendarWeek : CalendarNode
 {
     public string Week { get; }
     public ObservableCollection<CalendarDay> Days { get; }
 
-    public CalendarWeek(int number, ObservableCollection<CalendarDay> days)
+    public CalendarWeek(int number, ObservableCollection<CalendarDay> days) : base(days.First().DateTime)
     {
         Week = "Week " + number;
         Days = days;
